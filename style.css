@@ -5,6 +5,7 @@
     --bg-clr: #192734;
     --font-clr: #eee;
     --font-family: 'Poppins', sans-serif;
+    --font-bold: 800;
 }
 
 * {
@@ -29,7 +30,7 @@ h1.off-screen {
 
 .highlight {
     color: var(--theme-clr);
-    font-weight: 800;
+    font-weight: var(--font-bold);
     font-size: 1rem;
 }
 
@@ -62,12 +63,14 @@ main {
     /* transform: rotate(-5deg); */
     position: relative;
     z-index: 1;
+    box-shadow: 1px 1px 12px 2px #000;
 }
     main section {
         display: grid;
         grid-template-columns: 1fr 5fr;
         padding: 1rem 0;
-        margin: 1rem 0;
+        margin-bottom: 1rem;
+        position: relative;
     }
         section > div {
             padding-left: 2rem;
@@ -86,20 +89,51 @@ main {
         section  h4 {
             margin: .5rem 0;
         }
-        section  h5 {
-            font-weight: normal;
-        }
         section  p {
             margin: .5rem 0;
         }
 
 main section:first-child {
-    padding: 3rem 0 2rem;
+    padding: 3rem 0 1rem;
+}
+
+main section::before {
+    position: absolute;
+    right: -2rem;
+    top: -4rem;
+    color: var(--theme-clr);
+    opacity: .05;
+    font-size: 6rem;
+    font-weight: var(--font-bold);
+}
+    section:nth-child(2)::before { content: 'about'; }
+    section:nth-child(3)::before { content: 'skills'; }
+    section:nth-child(4)::before { content: 'portfolio'; }
+
+main::before,
+main::after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    font-weight: var(--font-bold);
+    color: var(--theme-clr);
+    opacity: .2;
+    letter-spacing: 1px;
+}
+main::before {
+    content: '<resume>';
+    top: 1rem;
+}
+main::after {
+    content: '</resume>';
+    bottom: 1rem;
 }
 
 .profile {
     text-align: center;
     color: var(--theme-clr);
+    /* padding: 3rem 0 2rem; */
 }
     .profile h2 {
         font-size: 3rem;
@@ -107,7 +141,7 @@ main section:first-child {
         word-spacing: -1rem;
     }
         .profile .thick {
-            font-weight: 800;
+            font-weight: var(--font-bold);
         }
     .profile h4 {
         font-weight: normal;
@@ -116,7 +150,8 @@ main section:first-child {
     }
     .profile h5 {
         font-size: 1rem;
-        color: var(--font-clr);
+        font-weight: normal;
+        color: #ddd;
         margin-top: .5rem;
     }
 
