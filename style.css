@@ -34,10 +34,23 @@ h1.off-screen {
 }
 
 a {
+    display: inline-block;
     color: #eee;
     font-size: 1rem;
     text-decoration: none;
     font-family: var(--font-family);
+    transition: transform 250ms linear;
+}
+a:hover {
+    color: var(--theme-clr);
+    filter: brightness(200%);
+    transform: translateX(.5rem);
+}
+
+hr {
+    height: .4rem;
+    background-color: var(--theme-clr);
+    border: none;
 }
 
 main {
@@ -54,13 +67,14 @@ main {
         display: grid;
         grid-template-columns: 1fr 5fr;
         padding: 1rem 0;
+        margin: 1rem 0;
     }
         section > div {
             padding-left: 2rem;
         }
         section .profile-pic {
             width: 140%;
-            margin-left: 1rem;
+            margin: 2.8rem 0 0 1rem ;
             z-index: 2;
         }
         section h3 {
@@ -79,19 +93,8 @@ main {
             margin: .5rem 0;
         }
 
-    .side-bg {
-        position: absolute;
-        z-index: -1;
-        top: 2rem;
-        left: 2rem;
-        bottom: 2rem;
-        width: 7.5rem;
-        background-color: var(--theme-clr);
-    }
-
 main section:first-child {
-    margin-top: 5rem;
-    outline: 1px solid lime;
+    padding: 3rem 0 2rem;
 }
 
 .profile {
@@ -106,6 +109,11 @@ main section:first-child {
         .profile .thick {
             font-weight: 800;
         }
+    .profile h4 {
+        font-weight: normal;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
     .profile h5 {
         font-size: 1rem;
         color: var(--font-clr);
@@ -123,4 +131,14 @@ section .link {
 
 .portfolio .highlight {
     margin-right: .25rem;
+}
+
+.side-bg {
+    position: absolute;
+    z-index: -1;
+    top: 2rem;
+    left: 2rem;
+    bottom: 2rem;
+    width: 7.5rem;
+    background-color: var(--theme-clr);
 }
