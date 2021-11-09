@@ -17,10 +17,10 @@
 body {
     font-family: var(--font-family);
     background-color: #222;
-    /* background-image: url('./assets/4.jpg'); */
-    /* background-image: url('./assets/111.jpg'); */
+    background-image: url('./assets/desktop-bg-3.jpg');
     background-size: cover;
     background-position: center top;
+    background-attachment: fixed;
 }
 
 h1.off-screen {
@@ -56,14 +56,22 @@ hr {
 
 main {
     width: 50%;
-    margin: 10rem auto;
+    margin: 15rem auto;
     padding: 2rem;
     background-color: var(--bg-clr);
     color: var(--font-clr);
-    /* transform: rotate(-5deg); */
+    transform: rotate(-2deg);
     position: relative;
     z-index: 1;
     box-shadow: 1px 1px 12px 2px #000;
+    animation: slide 1s ease-out backwards 1s;
+    transform-origin: bottom;
+}
+@keyframes slide {
+    from {
+        opacity: 0;
+        transform: translateY(50rem) rotate(-20deg) scale(1.5);
+    }
 }
     main section {
         display: grid;
@@ -176,4 +184,47 @@ section .link {
     bottom: 2rem;
     width: 7.5rem;
     background-color: var(--theme-clr);
+}
+
+.desk-only {
+    display: none;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-clr);
+    color: var(--theme-clr);
+    font-size: 2rem;
+    z-index: 111;
+}
+
+/* media queries */
+@media (max-width: 1366px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media (max-width: 1024px) {
+    html {
+        font-size: 12px;
+    }
+}
+@media (max-width: 823px) {
+    .desk-only {
+        display: grid;
+    }
+}
+
+/* landscape mode */
+@media (min-height: 1366px) {
+    .desk-only {
+        display: grid;
+    }
+}
+@media (min-height: 1025px) {
+    .desk-only {
+        display: grid;
+    }
 }
