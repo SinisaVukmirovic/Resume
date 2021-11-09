@@ -60,7 +60,7 @@ main {
     padding: 2rem;
     background-color: var(--bg-clr);
     color: var(--font-clr);
-    transform: rotate(-2deg);
+    transform: rotate(-1deg);
     position: relative;
     z-index: 1;
     box-shadow: 1px 1px 12px 2px #000;
@@ -107,6 +107,7 @@ main section:first-child {
 
 main section::before {
     position: absolute;
+    z-index: -1;
     right: -2rem;
     top: -4rem;
     color: var(--theme-clr);
