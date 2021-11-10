@@ -17,7 +17,7 @@
 body {
     font-family: var(--font-family);
     background-color: #222;
-    background-image: url('./assets/desktop-bg-3.jpg');
+    background-image: url('./assets/desktop-bg.jpg');
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
