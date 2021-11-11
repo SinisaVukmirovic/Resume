@@ -203,12 +203,17 @@ section .link {
 }
 
 /* media queries */
-@media (min-width: 4000px) {
+@media (min-width: 5120px) {
     html {
-        font-size: 32px;
+        font-size: 42px;
     }
 }
-@media (max-width: 2600px) {
+@media (min-width: 3440px) {
+    html {
+        font-size: 30px;
+    }
+}
+@media (max-width: 2560px) {
     html {
         font-size: 24px;
     }
