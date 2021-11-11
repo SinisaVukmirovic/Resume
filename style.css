@@ -55,7 +55,8 @@ hr {
 }
 
 main {
-    width: 50%;
+    width: 45rem;
+    /* width: 50%; */
     margin: 15rem auto;
     padding: 2rem;
     background-color: var(--bg-clr);
@@ -64,7 +65,7 @@ main {
     position: relative;
     z-index: 1;
     box-shadow: 1px 1px 6px 2px #000;
-    animation: slide 1s ease-out backwards 1s;
+    animation: slide 750ms ease-out backwards 1500ms;
     transform-origin: bottom;
 }
 @keyframes slide {
@@ -202,29 +203,42 @@ section .link {
 }
 
 /* media queries */
+@media (min-width: 4000px) {
+    html {
+        font-size: 32px;
+    }
+}
+@media (max-width: 2600px) {
+    html {
+        font-size: 24px;
+    }
+}
+@media (max-width: 1920px) {
+    html {
+        font-size: 18px;
+    }
+}
+@media (max-width: 1650px) {
+    html {
+        font-size: 16px;
+    }
+}
 @media (max-width: 1366px) {
     html {
         font-size: 14px;
     }
 }
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
     html {
         font-size: 12px;
     }
+} */
+@media (max-width: 1024px) {
+    .desk-only {
+        display: grid;
+    }
 }
 @media (max-width: 823px) {
-    .desk-only {
-        display: grid;
-    }
-}
-
-/* landscape mode */
-@media (min-height: 1366px) {
-    .desk-only {
-        display: grid;
-    }
-}
-@media (min-height: 1025px) {
     .desk-only {
         display: grid;
     }
