@@ -65,7 +65,7 @@ main {
     position: relative;
     z-index: 1;
     box-shadow: 1px 1px 6px 2px #000;
-    animation: slide 750ms ease-out backwards 1500ms;
+    /* animation: slide 750ms ease-out backwards 1500ms; */
     transform-origin: bottom;
 }
 @keyframes slide {
@@ -76,18 +76,26 @@ main {
 }
     main section {
         display: grid;
-        grid-template-columns: 7rem 4fr;
-        padding: 1rem 0;
-        margin-bottom: 1rem;
+        grid-template-columns: 1fr 4fr;
+        /* padding: 1rem 0; */
         position: relative;
     }
-        section > div {
+        section .side {
+            background-color: var(--theme-clr);
+            padding-right: .5rem;
+            text-align: right;
+        }
+            .side:first-child {
+                padding: 0;
+            }
+        .info {
+            color: #ddd;
+            padding: 1rem;
             padding-left: 2rem;
         }
         section .profile-pic {
-            width: 10rem;
-            margin: 2.8rem 0 0 1rem ;
-            z-index: 2;
+            width: 100%;
+            /* z-index: 2; */
         }
         section h3 {
             text-align: right;
@@ -101,10 +109,9 @@ main {
         section  p {
             margin: .5rem 0;
         }
+        
 
-main section:first-child {
-    padding: 3rem 0 1rem;
-}
+
 
 main section::before {
     position: absolute;
