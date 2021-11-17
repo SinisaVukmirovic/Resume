@@ -74,126 +74,81 @@ main {
         transform: translateY(50rem) rotate(-20deg) scale(1.5);
     }
 }
-    main section {
-        display: grid;
-        grid-template-columns: 1fr 4fr;
-        /* padding: 1rem 0; */
+
+main section {
+    display: grid;
+    grid-template-columns: 7.5rem 3fr;
+    position: relative;
+}
+    section .side {
+        background-color: var(--theme-clr);
+        color: var(--bg-clr);
+        padding: 2rem .25rem;
+        text-align: right;
+    }
+        section .side h3 {
+            font-size: 1.5rem;
+        }
+
+    section:first-child .side {
+        padding: 6rem 0 0 1rem;
         position: relative;
     }
-        section .side {
-            background-color: var(--theme-clr);
-            padding-right: .5rem;
-            text-align: right;
+        section:first-child .side .profile-pic {
+            width: 10rem;
+            z-index: 2;
         }
-            .side:first-child {
-                padding: 0;
-            }
-        .info {
-            color: #ddd;
-            padding: 1rem;
-            padding-left: 2rem;
+    section:first-child .info {
+        padding: 3rem 0 3rem 1.5rem;
+        /* padding: 3rem 0 3rem; */
+        text-align: center;
+        color: var(--theme-clr);
+    }
+        section:first-child .info h2 {
+            font-size: 3rem;
+            font-weight: normal;
+            word-spacing: -1rem;
         }
-        section .profile-pic {
-            width: 100%;
-            /* z-index: 2; */
+        section:first-child .info .thick {
+            font-weight: var(--font-bold);
         }
-        section h3 {
-            text-align: right;
-            /* margin-right: .25rem; */
+        section:first-child .info h4 {
+            font-weight: normal;
             font-size: 1.5rem;
-            color: var(--bg-clr);
+            letter-spacing: 2px;
         }
-        section  h4 {
-            margin: .5rem 0;
-        }
-        section  p {
-            margin: .5rem 0;
+        section:first-child .info h5 {
+            font-size: 1rem;
+            font-weight: normal;
+            color: #ddd;
+            margin-top: .5rem;
         }
         
 
-
-
-main section::before {
-    position: absolute;
-    z-index: -1;
-    right: -2rem;
-    top: -4rem;
-    color: var(--theme-clr);
-    opacity: .05;
-    font-size: 6rem;
-    font-weight: var(--font-bold);
-}
-    section:nth-child(2)::before { content: 'about'; }
-    section:nth-child(3)::before { content: 'skills'; }
-    section:nth-child(4)::before { content: 'portfolio'; }
-
-main::before,
-main::after {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.5rem;
-    font-weight: var(--font-bold);
-    color: var(--theme-clr);
-    opacity: .2;
-    letter-spacing: 1px;
-}
-main::before {
-    content: '<resume>';
-    top: 1rem;
-}
-main::after {
-    content: '</resume>';
-    bottom: 1rem;
-}
-
-.profile {
-    text-align: center;
-    color: var(--theme-clr);
-    /* padding: 3rem 0 2rem; */
-}
-    .profile h2 {
-        font-size: 3rem;
-        font-weight: normal;
-        word-spacing: -1rem;
+    section .info {
+        color: var(--font-clr);
+        padding: 2rem 0 2rem 1.5rem;
     }
-        .profile .thick {
-            font-weight: var(--font-bold);
+        section .info h4, 
+        section .info p {
+            margin: .5rem 0;
         }
-    .profile h4 {
-        font-weight: normal;
-        font-size: 1.5rem;
-        letter-spacing: 2px;
-    }
-    .profile h5 {
-        font-size: 1rem;
-        font-weight: normal;
-        color: #ddd;
-        margin-top: .5rem;
-    }
 
-section .link {
-    display: flex;
-    align-items: center;
-    margin: .5rem 0;
-}
-    .link img {
-        margin-right: .5rem;
+    section .info .link {
+        display: flex;
+        align-items: center;
+        margin: .5rem 0;
     }
+        .info .link img {
+            margin-right: .5rem;
+        }
+        .info .highlight {
+            margin-right: .25rem;
+        }
 
-.portfolio .highlight {
-    margin-right: .25rem;
-}
 
-.side-bg {
-    position: absolute;
-    z-index: -1;
-    top: 2rem;
-    left: 2rem;
-    bottom: 2rem;
-    width: 7.5rem;
-    background-color: var(--theme-clr);
-}
+
+
 
 .desk-only {
     display: none;
