@@ -194,6 +194,23 @@ main::after {
     z-index: 111;
 }
 
+/* Custom scroll bars style */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    background: var(--bg-clr);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--font-clr);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-clr); 
+}
+
 /* media queries */
 @media (min-width: 5120px) {
     html {
